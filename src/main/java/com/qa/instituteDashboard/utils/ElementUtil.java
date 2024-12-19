@@ -464,6 +464,12 @@ public WebElement selectText(String txt) {
         return null; // Return null or handle appropriately if the operation fails
     }
 
+    public  String selectDropDownTextOld(By locator, String text) {
+        getElement(locator).click();
+        WebElement DD = selectText(text);
+        waitforElementVisible(DD, 20).click();
+        return text;
+    }
 
 
 
