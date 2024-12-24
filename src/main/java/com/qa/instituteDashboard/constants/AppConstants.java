@@ -27,6 +27,7 @@ public class AppConstants {
     public static final String FEE_STRUCTURE_PAGE_FRACTION_URL="/fee-payment/fee-structure";
     public static final String COINS_PAGE_FRACTION_URL="/fee-payment/students-coins-requests";
     public static final String BULK_ACTIONS_PAGE_FRACTION_URL="fee-payment/bulk-actions";
+    public static final String LEO1_CARD_PAGE_FRACTION_URL= "leo1-card/pre-issuance/dashboard";
 
 
     //    Headers List

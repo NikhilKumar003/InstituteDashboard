@@ -34,6 +34,11 @@ public class DashBoardPage {
     private By navBar= By.xpath("//img[@alt='toggle menu']");
     private By resetBtn = By.xpath("//span[text()='Reset']");
     private By feePaymentList= By.xpath("//*[@id='containerSidebar']/nav/ul/div[3]/ul/li");
+    private By leo1CardBtn= By.xpath("//span[contains(text(),'Leo1 Card')]");
+    private By preIssuanceBtn= By.xpath("//span[contains(text(),'Pre-Issuance')]");
+    private By cardDashboardBtn= By.xpath("(//span[contains(text(),'Dashboard')])[2]");
+
+
 
 
     public DashBoardPage(WebDriver driver){
@@ -148,5 +153,11 @@ public class DashBoardPage {
     public CoinsRequestPage setSummaryPage(){
         eleUtil.waitforElementVisible(summaryBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         return new  CoinsRequestPage(driver);
+    }
+    public Leo1CardPage setCardDashboardPage(){
+        eleUtil.waitforElementVisible(leo1CardBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(preIssuanceBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.doClick(cardDashboardBtn);
+        return new Leo1CardPage(driver);
     }
 }
