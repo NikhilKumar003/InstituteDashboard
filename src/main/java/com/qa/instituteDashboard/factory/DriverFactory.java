@@ -18,7 +18,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import static java.sql.DriverManager.getDriver;
 
 public class DriverFactory {
     WebDriver driver;
@@ -88,7 +87,7 @@ public Properties initProp(){
         try {
             if (envName == null) {
                 System.out.println("env is null... hence running on qa env");
-                ip = new FileInputStream("./src/test/resources/config/uat.config.properties");
+                ip = new FileInputStream("./src/test/resources/config/config.properties");
             } else {
                 switch (envName.toLowerCase().trim()) {
                     case "uat":
