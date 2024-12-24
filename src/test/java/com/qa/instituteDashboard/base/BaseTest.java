@@ -20,7 +20,7 @@ public class BaseTest {
     protected FeeStructurePage feeStructurePage;
     protected CoinsRequestPage coinsRequestPage;
     protected BulkActionPage bulkActionPage;
-//    protected
+    protected Leo1CardPage leo1CardPage;
 
     @BeforeTest
     public void setup(){
