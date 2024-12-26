@@ -31,6 +31,23 @@ public class Leo1CardPageTest extends BaseTest {
     }
     @Test
     public void isDownloadTableBtnExistTest(){
-        Assert.assertTrue(leo1CardPage.isUploadExcelBtn());
+        Assert.assertTrue(leo1CardPage.isdownloadTableBtn());
     }
+    @Test
+    public void isResetBtnExistTest(){
+        Assert.assertTrue(leo1CardPage.isResetBtn());
+    }
+    @Test
+    public void isSubmitBtnExistTest(){
+        Assert.assertTrue(leo1CardPage.isSubmitAndClearBtn());
+    }
+    @Test
+    public void checkUserWithMobileTest(){
+        leo1CardPage.checkUserWithMobile();
+    }
+    @Test
+    public void verifyAllUsersLoadedTest(){
+        leo1CardPage.verifyAllUsersLoaded();
+    }
+
 }
