@@ -21,6 +21,7 @@ public class Leo1CardPage {
     private By clearBtn = By.xpath("//button[contains(text(),'Clear')]");
     private By mobileNoText = By.xpath("//input[@placeholder='Mobile No.']");
     private By deliverStudentBtn = By.xpath("//button[contains(text(),'Delivered to student:')]");
+    private By checkBoxBtn = By.xpath("//*[@id=\"cell-1-undefined\"]/div/div/input");
 
 
     public Leo1CardPage(WebDriver driver) {
@@ -57,6 +58,9 @@ public class Leo1CardPage {
         eleUtil.waitforElementVisible(showBtn, AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.scrollToElement(submitBtn);
         eleUtil.doClick(showBtn);
+        eleUtil.waitforElementVisible(checkBoxBtn,AppConstants.DEFAULT_LONG_TIME_OUT);
+        eleUtil.scrollToElement(checkBoxBtn);
+        eleUtil.doClick(checkBoxBtn);
 
 
     }
