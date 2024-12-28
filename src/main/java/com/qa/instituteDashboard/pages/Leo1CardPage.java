@@ -22,7 +22,7 @@ public class Leo1CardPage {
     private By mobileNoText = By.xpath("//input[@placeholder='Mobile No.']");
     private By deliverStudentBtn = By.xpath("//button[contains(text(),'Delivered to student:')]");
     private By checkBoxBtn = By.xpath("//*[@id=\"cell-1-undefined\"]/div/div/input");
-
+    
 
     public Leo1CardPage(WebDriver driver) {
         this.driver = driver;
