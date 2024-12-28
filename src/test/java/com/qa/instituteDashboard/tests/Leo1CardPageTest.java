@@ -49,5 +49,9 @@ public class Leo1CardPageTest extends BaseTest {
     public void verifyAllUsersLoadedTest(){
         leo1CardPage.verifyAllUsersLoaded();
     }
+    @Test
+    public void isFetchMoreBtnExistTest(){
+        leo1CardPage.isFetchMoreBtnExist();
+    }
 
 }
