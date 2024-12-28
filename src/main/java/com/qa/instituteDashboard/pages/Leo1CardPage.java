@@ -22,7 +22,7 @@ public class Leo1CardPage {
     private By mobileNoText = By.xpath("//input[@placeholder='Mobile No.']");
     private By deliverStudentBtn = By.xpath("//button[contains(text(),'Delivered to student:')]");
     private By checkBoxBtn = By.xpath("//*[@id=\"cell-1-undefined\"]/div/div/input");
-    
+    private By fetchMoreBtn = By.xpath("//button[contains(text(),'Fetch More Records')]");
 
     public Leo1CardPage(WebDriver driver) {
         this.driver = driver;
@@ -54,6 +54,10 @@ public class Leo1CardPage {
         eleUtil.scrollToElement(submitBtn);
         return eleUtil.isElementDisplayed(submitBtn);
     }
+    public void isFetchMoreBtnExist(){
+        eleUtil.waitforElementVisible(checkBoxBtn,AppConstants.DEFAULT_LONG_TIME_OUT);
+        eleUtil.scrollToElement(fetchMoreBtn);
+    }
     public void verifyAllUsersLoaded(){
         eleUtil.waitforElementVisible(showBtn, AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.scrollToElement(submitBtn);
@@ -61,8 +65,6 @@ public class Leo1CardPage {
         eleUtil.waitforElementVisible(checkBoxBtn,AppConstants.DEFAULT_LONG_TIME_OUT);
         eleUtil.scrollToElement(checkBoxBtn);
         eleUtil.doClick(checkBoxBtn);
-
-
     }
 
     public void checkUserWithMobile(){
@@ -72,4 +74,5 @@ public class Leo1CardPage {
         eleUtil.waitforElementVisible(submitBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
 //        eleUtil.scrollToElement(deliverStudentBtn);
     }
+
 }
