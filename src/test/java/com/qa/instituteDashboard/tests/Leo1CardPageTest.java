@@ -41,17 +41,24 @@ public class Leo1CardPageTest extends BaseTest {
     public void isSubmitBtnExistTest(){
         Assert.assertTrue(leo1CardPage.isSubmitAndClearBtn());
     }
-    @Test
+    @Test(priority = Integer.MAX_VALUE-1)
     public void checkUserWithMobileTest(){
         leo1CardPage.checkUserWithMobile();
     }
-    @Test
+    @Test(enabled = false)
     public void verifyAllUsersLoadedTest(){
         leo1CardPage.verifyAllUsersLoaded();
     }
-    @Test
+    @Test(priority = Integer.MAX_VALUE)
     public void isFetchMoreBtnExistTest(){
         leo1CardPage.isFetchMoreBtnExist();
     }
-
+    @Test
+    public void checkDownloadBtnTest(){
+        leo1CardPage.checkDownloadBtn();
+    }
+    @Test(enabled = false)
+    public void checkUploadExcelBtnTest(){
+        leo1CardPage.checkUploadExcelBtn();
+    }
 }

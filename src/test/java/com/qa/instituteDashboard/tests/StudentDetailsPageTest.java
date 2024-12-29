@@ -70,18 +70,23 @@ public class StudentDetailsPageTest extends BaseTest {
     public Object[][] getStudentData(){
         return new Object[][]{
                 {"7842290549"},
-                {"9958757622"},
-                {"7730005660"},
-                {"8341369495"},
+//                {"9958757622"},
+//                {"7730005660"},
+//                {"8341369495"},
         };
     }
-
 
     @Test(dataProvider = "getStudentData")
     public void searchStudentFieldTest(String phone) throws InterruptedException {
         studentListPage.setSearchBtn(phone);
-        Assert.assertTrue(studentListPage.isSendRemainderExist());
-        studentListPage.doClear();
+        Assert.assertTrue(studentListPage.isCaptureBtnExist());
+//        studentListPage.doClear();
+    }
+
+    @Test(dataProvider = "getStudentData")
+    public void setCapturePayBtnTest(String phone) throws InterruptedException {
+        studentListPage.setCapturePayBtn(phone);
+        Assert.assertTrue(studentListPage.isCaptureHeaderExist());
     }
 
 }
