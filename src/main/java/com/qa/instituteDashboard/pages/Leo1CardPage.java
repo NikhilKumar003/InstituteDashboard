@@ -24,7 +24,6 @@ public class Leo1CardPage {
     private By checkBoxBtn = By.xpath("//*[@id=\"cell-1-undefined\"]/div/div/input");
     private By fetchMoreBtn = By.xpath("//button[contains(text(),'Fetch More Records')]");
 
-
     public Leo1CardPage(WebDriver driver) {
         this.driver = driver;
         eleUtil = new ElementUtil(driver);
