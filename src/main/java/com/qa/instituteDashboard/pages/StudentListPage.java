@@ -23,6 +23,8 @@ public class StudentListPage {
     private By cancelBtn = By.xpath("//button[text()='Cancel']");
     private By viewFeeDetails = By.xpath("//span[text()='View/Modify']");
     private By trackBtn = By.xpath("//div[@id='cell-5-0']//p");
+    private By makePaymentBtn = By.xpath("//button[contains(text(),'Make Payment')]");
+    private By captureHeaderText = By.xpath("//span[contains(text(),'Capture payment')]");
 
     public StudentListPage(WebDriver driver){
         this.driver=driver;
@@ -62,6 +64,11 @@ public class StudentListPage {
         eleUtil.waitforElementpresence(trackBtn, AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(trackBtn);
     }
+    public boolean isCaptureHeaderExist(){
+        eleUtil.waitforElementpresence(captureHeaderText,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(captureHeaderText);
+    }
+
     public boolean isInstituteDropDownExist(){
         eleUtil.waitforElementpresence(dropDownInstitute, AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(dropDownInstitute);
@@ -79,12 +86,20 @@ public class StudentListPage {
        return headerTextList;
     }
     public boolean setSearchBtn(String mobile) throws InterruptedException {
-        eleUtil.waitforElementVisible(downloadBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.waitforElementVisible(resetBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         eleUtil.doSendKeysWithClear(driver.findElement(searchBtn),mobile);
             Thread.sleep(4000);
-        return eleUtil.isElementDisplayed(sendRemainderBtn);
+        return eleUtil.isElementDisplayed(capturePayBtn);
+
     }
     public void doClear(){
         eleUtil.doClear(searchBtn);
     }
+    public boolean setCapturePayBtn(String mobile) throws InterruptedException {
+        setSearchBtn(mobile);
+        eleUtil.waitforElementVisible(capturePayBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(makePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(makePaymentBtn);
+    }
+
 }

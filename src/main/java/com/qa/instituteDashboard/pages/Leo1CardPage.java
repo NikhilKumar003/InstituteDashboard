@@ -66,13 +66,21 @@ public class Leo1CardPage {
         eleUtil.scrollToElement(checkBoxBtn);
         eleUtil.doClick(checkBoxBtn);
     }
-
     public void checkUserWithMobile(){
-        eleUtil.waitforElementVisible(showBtn, AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(showBtn, AppConstants.DEFAULT_SHORT_TIME_OUT);
         eleUtil.scrollToElement(submitBtn);
         eleUtil.waitforElementVisible(mobileNoText,AppConstants.DEFAULT_SHORT_TIME_OUT).sendKeys("7842290549");
         eleUtil.waitforElementVisible(submitBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
-//        eleUtil.scrollToElement(deliverStudentBtn);
+        eleUtil.waitforElementVisible(checkBoxBtn,AppConstants.DEFAULT_LONG_TIME_OUT);
+        eleUtil.scrollToElement(checkBoxBtn);
+        eleUtil.doClick(checkBoxBtn);
     }
-
+    public void checkDownloadBtn(){
+        eleUtil.waitforElementVisible(downloadTemplateBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.doClick(downloadTemplateBtn);
+    }
+    public void checkUploadExcelBtn(){
+        eleUtil.waitforElementVisible(uploadExcelBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.doClick(uploadExcelBtn);
+    }
 }
