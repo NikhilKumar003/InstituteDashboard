@@ -58,4 +58,10 @@
         </classes>
     </test>
 
+    <test  name="Leo1 Cards Page Test" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.qa.instituteDashboard.tests.Leo1CardPageTest"></class>
+        </classes>
+    </test>
 </suite>
