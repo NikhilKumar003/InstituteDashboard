@@ -37,6 +37,7 @@ public class DashBoardPage {
     private By leo1CardBtn= By.xpath("//span[contains(text(),'Leo1 Card')]");
     private By preIssuanceBtn= By.xpath("//span[contains(text(),'Pre-Issuance')]");
     private By cardDashboardBtn= By.xpath("(//span[contains(text(),'Dashboard')])[2]");
+    private By fileManagerBtn = By.xpath("//span[contains(text(),'File Manager')]");
 
 
 
@@ -159,5 +160,9 @@ public class DashBoardPage {
         eleUtil.waitforElementVisible(preIssuanceBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.doClick(cardDashboardBtn);
         return new Leo1CardPage(driver);
+    }
+    public FileManagerPage setFileManagerPage(){
+        eleUtil.waitforElementVisible(fileManagerBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        return new FileManagerPage(driver);
     }
 }

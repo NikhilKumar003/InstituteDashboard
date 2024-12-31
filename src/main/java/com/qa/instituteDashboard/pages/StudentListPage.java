@@ -87,6 +87,7 @@ public class StudentListPage {
     }
     public boolean setSearchBtn(String mobile) throws InterruptedException {
         eleUtil.waitforElementVisible(resetBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.doClick(resetBtn);
         eleUtil.doSendKeysWithClear(driver.findElement(searchBtn),mobile);
             Thread.sleep(4000);
         return eleUtil.isElementDisplayed(capturePayBtn);
