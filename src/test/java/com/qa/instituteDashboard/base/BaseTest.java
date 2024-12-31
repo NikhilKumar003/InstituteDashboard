@@ -21,6 +21,7 @@ public class BaseTest {
     protected CoinsRequestPage coinsRequestPage;
     protected BulkActionPage bulkActionPage;
     protected Leo1CardPage leo1CardPage;
+    protected FileManagerPage fileManagerPage;
 
     @BeforeTest
     public void setup(){

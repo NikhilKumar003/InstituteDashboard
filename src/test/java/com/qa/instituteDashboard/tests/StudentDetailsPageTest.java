@@ -83,7 +83,7 @@ public class StudentDetailsPageTest extends BaseTest {
 //        studentListPage.doClear();
     }
 
-    @Test(dataProvider = "getStudentData")
+    @Test(dataProvider = "getStudentData",priority = Integer.MAX_VALUE)
     public void setCapturePayBtnTest(String phone) throws InterruptedException {
         studentListPage.setCapturePayBtn(phone);
         Assert.assertTrue(studentListPage.isCaptureHeaderExist());
