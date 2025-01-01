@@ -26,5 +26,13 @@ public class FileManagerPageTest extends BaseTest {
       Assert.assertTrue(fileManagerPage.isFileManagerHeaderExist());
     }
 
-
+    @Test
+    public void isFetchMoreBtnExistTest(){
+        Assert.assertTrue(fileManagerPage.isFetchMoreBtnExist());
+    }
+    @Test
+    public void getColumnCount(){
+        int count = fileManagerPage.getcolomnListHeaderCount();
+        Assert.assertEquals(count,AppConstants.FEE_MANAGER_LIST_HEADERS_COUNT);
+    }
 }
