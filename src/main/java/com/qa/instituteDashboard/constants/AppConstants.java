@@ -37,6 +37,7 @@ public class AppConstants {
 
     public static final int ACCOUNT_PAGE_HEADERS_COUNT = 3;
     public static final int STUDENT_LIST_HEADERS_COUNT = 5;
+    public static final int FEE_MANAGER_LIST_HEADERS_COUNT = 6;
 
     public static final String STUDENT_MOBILE_NO = "7842290549";
     public static final String LOAN_STATUS = "Approved";

@@ -12,7 +12,7 @@ public class FileManagerPage {
 
     private By fileManagerText = By.xpath("//div[contains(text(),'File Manager')]");
     private By colomnList = By.cssSelector("div.sc-gEvEer  div.sc-eqUAAy  div.sc-fqkvVR ");
-
+    private By fetchMoreBtn = By.xpath("//button[contains(text(),'Fetch More Records')]");
 
     public FileManagerPage(WebDriver driver){
         this.driver =driver;
@@ -28,6 +28,14 @@ public class FileManagerPage {
     public boolean isFileManagerHeaderExist(){
         eleUtil.waitforElementVisible(fileManagerText,AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(fileManagerText);
+    }
+    public boolean isFetchMoreBtnExist(){
+        eleUtil.waitforElementVisible(fetchMoreBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.scrollToElement(fetchMoreBtn);
+        return eleUtil.isElementDisplayed(fetchMoreBtn);
+    }
+    public int getcolomnListHeaderCount(){
+        return eleUtil.waitForElementsVisible(colomnList,AppConstants.DEFAULT_SHORT_TIME_OUT).size();
     }
 
 
