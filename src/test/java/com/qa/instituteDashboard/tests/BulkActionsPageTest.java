@@ -17,7 +17,7 @@ public class BulkActionsPageTest extends BaseTest {
     @Test
     public void getPageUrlTest(){
         String studentUrl = bulkActionPage.getPageUrl();
-        Assert.assertTrue(studentUrl.contains(AppConstants.FEE_STRUCTURE_PAGE_FRACTION_URL));
+        Assert.assertTrue(studentUrl.contains(AppConstants.BULK_ACTIONS_PAGE_FRACTION_URL));
     }
     @Test
     public void isBulkCaptureHeaderExistTest(){

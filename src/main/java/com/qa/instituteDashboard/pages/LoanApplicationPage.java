@@ -47,6 +47,7 @@ public class LoanApplicationPage {
 
     public String getLoanStatus(String loanStatus){
       eleUtil.selectDropDownText(dropDown,loanStatus);
+
        return eleUtil.waitforElementVisible(verifyStatus,AppConstants.DEFAULT_LONG_TIME_OUT).getText();
 
     }
