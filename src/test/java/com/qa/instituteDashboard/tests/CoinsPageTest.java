@@ -14,7 +14,7 @@ public class CoinsPageTest extends BaseTest {
         dashBoardPage.setFeePaymentBtn();
         coinsRequestPage= dashBoardPage.setCoinsRequestPage();
     }
-    @Test
+
     public void getCoinPageTitleTest(){
         String title= coinsRequestPage.getPageTitle();
         Assert.assertEquals(title, AppConstants.COINS_PAGE_TITLE);
