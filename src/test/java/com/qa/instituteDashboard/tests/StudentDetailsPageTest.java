@@ -83,10 +83,16 @@ public class StudentDetailsPageTest extends BaseTest {
 //        studentListPage.doClear();
     }
 
-    @Test(dataProvider = "getStudentData",priority = Integer.MAX_VALUE)
+    @Test(dataProvider = "getStudentData",priority = Integer.MAX_VALUE-1)
     public void setCapturePayBtnTest(String phone) throws InterruptedException {
         studentListPage.setCapturePayBtn(phone);
         Assert.assertTrue(studentListPage.isCaptureHeaderExist());
+        studentListPage.setCloseBtn();
     }
 
+    @Test(dataProvider = "getStudentData",priority = Integer.MAX_VALUE)
+    public void studentOverallDetailsTest(String phone) throws InterruptedException {
+        studentListPage.studentOverallDetails(phone);
+        Assert.assertTrue(studentListPage.isStudentOverallDetailsExist());
+    }
 }

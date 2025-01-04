@@ -25,6 +25,8 @@ public class StudentListPage {
     private By trackBtn = By.xpath("//div[@id='cell-5-0']//p");
     private By makePaymentBtn = By.xpath("//button[contains(text(),'Make Payment')]");
     private By captureHeaderText = By.xpath("//span[contains(text(),'Capture payment')]");
+    private By studentDetailsText = By.xpath("//h1[text()='Student Overall Details']");
+    private By closeBtn = By.xpath("//img[@alt='close']");
 
     public StudentListPage(WebDriver driver){
         this.driver=driver;
@@ -68,6 +70,10 @@ public class StudentListPage {
         eleUtil.waitforElementpresence(captureHeaderText,AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(captureHeaderText);
     }
+    public boolean isStudentOverallDetailsExist(){
+        eleUtil.waitforElementpresence(studentDetailsText,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(studentDetailsText);
+    }
 
     public boolean isInstituteDropDownExist(){
         eleUtil.waitforElementpresence(dropDownInstitute, AppConstants.DEFAULT_SHORT_TIME_OUT);
@@ -101,6 +107,18 @@ public class StudentListPage {
         eleUtil.waitforElementVisible(capturePayBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.waitforElementVisible(makePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(makePaymentBtn);
+
     }
 
+    public boolean studentOverallDetails(String mobile) throws InterruptedException {
+        setCapturePayBtn(mobile);
+        eleUtil.doClick(closeBtn);
+        eleUtil.waitforElementVisible(capturePayBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.waitforElementVisible(viewFeeDetails,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        return eleUtil.isElementDisplayed(studentDetailsText);
+
+    }
+    public void setCloseBtn(){
+        eleUtil.doClick(closeBtn);
+    }
 }
