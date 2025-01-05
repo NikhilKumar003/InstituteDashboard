@@ -22,6 +22,7 @@ public class BaseTest {
     protected BulkActionPage bulkActionPage;
     protected Leo1CardPage leo1CardPage;
     protected FileManagerPage fileManagerPage;
+    protected StudentFeeDetailsPage studentFeeDetailsPage;
 
     @BeforeTest
     public void setup(){

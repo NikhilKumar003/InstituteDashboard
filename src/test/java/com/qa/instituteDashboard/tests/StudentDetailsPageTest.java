@@ -94,5 +94,8 @@ public class StudentDetailsPageTest extends BaseTest {
     public void studentOverallDetailsTest(String phone) throws InterruptedException {
         studentListPage.studentOverallDetails(phone);
         Assert.assertTrue(studentListPage.isStudentOverallDetailsExist());
+        studentListPage.setBackBtn();
+        Assert.assertTrue(studentListPage.isResetBtnExist());
+
     }
 }
