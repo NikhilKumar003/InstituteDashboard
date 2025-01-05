@@ -27,6 +27,8 @@ public class StudentListPage {
     private By captureHeaderText = By.xpath("//span[contains(text(),'Capture payment')]");
     private By studentDetailsText = By.xpath("//h1[text()='Student Overall Details']");
     private By closeBtn = By.xpath("//img[@alt='close']");
+    private By backBtn = By.xpath("//div[@role='button']");
+
 
     public StudentListPage(WebDriver driver){
         this.driver=driver;
@@ -118,7 +120,18 @@ public class StudentListPage {
         return eleUtil.isElementDisplayed(studentDetailsText);
 
     }
+    public StudentFeeDetailsPage setStudentFeeDetailsPage(String mobile) throws InterruptedException {
+        setSearchBtn(mobile);
+        eleUtil.waitforElementVisible(capturePayBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.waitforElementVisible(viewFeeDetails,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        return new StudentFeeDetailsPage(driver);
+    }
+
     public void setCloseBtn(){
         eleUtil.doClick(closeBtn);
+    }
+
+    public void setBackBtn(){
+        eleUtil.doClick(backBtn);
     }
 }
