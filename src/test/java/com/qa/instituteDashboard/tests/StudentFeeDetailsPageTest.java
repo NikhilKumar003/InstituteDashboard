@@ -29,6 +29,21 @@ public class StudentFeeDetailsPageTest extends BaseTest {
     public void isViewUpdateBtnExistTest(){
      Assert.assertTrue(studentFeeDetailsPage.isViewUpdateBtnExist());
     }
-
+    @Test
+    public void isFeeRemianderBtnExistTest(){
+        Assert.assertTrue(studentFeeDetailsPage.isFeeRemainderBtnExist());
+    }
+    @Test
+    public void isCapturePaymentBtnExistTest(){
+        Assert.assertTrue(studentFeeDetailsPage.isCapturePaymentBtnExist());
+    }
+    @Test
+    public void isRefundBtnExistTest(){
+        Assert.assertTrue(studentFeeDetailsPage.isRefundBtnExist());
+    }
+    @Test
+    public void isWaiverBtnExistTest(){
+        Assert.assertTrue(studentFeeDetailsPage.isWaiverBtnExist());
+    }
 
 }
