@@ -13,10 +13,19 @@ public class StudentFeeDetailsPage {
     private ElementUtil eleUtil;
 
     private By viewUpdateBtn =By.xpath("//button[text()='View/Update']");
-    private By feeRemainderBtn =By.xpath("//button[text()='View/Update']");
-    private By capturePaymentBtn =By.xpath("//button[text()='View/Update']");
-    private By refundBtn =By.xpath("//button[text()='View/Update']");
-    private By waiverBtn =By.xpath("//button[text()='View/Update']");
+    private By feeRemainderBtn =By.xpath("//button[text()='Send Reminder']");
+    private By capturePaymentBtn =By.xpath("//button[text()='Capture Payment']");
+    private By transactionBtn = By.xpath("//button[text()='View']");
+    private By refundBtn =By.xpath("//button[text()='Refund']");
+    private By waiverBtn =By.xpath("//button[text()='Waiver']");
+    private By feesViewHeader = By.xpath("//span[text()='Fees View/Update']");
+    private By addFeeEntryBtn = By.xpath("//span[text()='Fee Entry']");
+    private By closeBtn = By.xpath("//img[@alt='close']");
+    private By listOfInstallments = By.cssSelector("w-100 mt-2 ");
+    private By makePaymentBtn = By.xpath("//button[contains(text(),'Make Payment')]");
+    private By captureHeaderText = By.xpath("//span[contains(text(),'Capture payment')]");
+
+
 
     public StudentFeeDetailsPage(WebDriver driver){
         this.driver= driver;
@@ -46,6 +55,21 @@ public class StudentFeeDetailsPage {
     public boolean isWaiverBtnExist(){
         eleUtil.waitforElementVisible(waiverBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(waiverBtn);
+    }
+    public void setCloseBtn(){
+        eleUtil.doClick(closeBtn);
+    }
+    public boolean isAddFeeEntryBtn(){
+        eleUtil.waitforElementVisible(viewUpdateBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(feesViewHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(addFeeEntryBtn);
+    }
+    public boolean setCapturePaymentBtn(){
+
+       eleUtil.waitforElementVisible(capturePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.scrollToElement(capturePaymentBtn);
+       eleUtil.waitforElementVisible(makePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+       return eleUtil.isElementDisplayed(makePaymentBtn);
     }
 
 

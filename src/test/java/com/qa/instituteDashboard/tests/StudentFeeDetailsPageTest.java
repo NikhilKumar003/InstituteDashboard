@@ -2,6 +2,7 @@ package com.qa.instituteDashboard.tests;
 
 import com.qa.instituteDashboard.base.BaseTest;
 import com.qa.instituteDashboard.constants.AppConstants;
+import org.checkerframework.checker.units.qual.A;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -44,6 +45,16 @@ public class StudentFeeDetailsPageTest extends BaseTest {
     @Test
     public void isWaiverBtnExistTest(){
         Assert.assertTrue(studentFeeDetailsPage.isWaiverBtnExist());
+    }
+    @Test(priority = Integer.MAX_VALUE-1)
+    public void isAddFeeEntryBtnExistTest(){
+        Assert.assertTrue(studentFeeDetailsPage.isAddFeeEntryBtn());
+        studentListPage.setCloseBtn();
+    }
+    @Test(priority = Integer.MAX_VALUE)
+    public void setCapturePaymentBtnTest(){
+        Assert.assertTrue(studentFeeDetailsPage.setCapturePaymentBtn());
+        studentListPage.setCloseBtn();
     }
 
 }
