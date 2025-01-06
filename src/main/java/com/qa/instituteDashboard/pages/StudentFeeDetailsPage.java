@@ -24,6 +24,14 @@ public class StudentFeeDetailsPage {
     private By listOfInstallments = By.cssSelector("w-100 mt-2 ");
     private By makePaymentBtn = By.xpath("//button[contains(text(),'Make Payment')]");
     private By captureHeaderText = By.xpath("//span[contains(text(),'Capture payment')]");
+    private By transactionHeader = By.xpath("//span[text()='Transactions']");
+    private By downloadBtn = By.cssSelector("div.mr-2 > span > img");
+    private By transactionTable = By.cssSelector("div.w-100 table");
+    private By refundHeader = By.xpath("//span[text()='Student Refund']");
+    private By applyRefundBtn = By.xpath("//button[text()='Apply Refund']");
+    private By waiverHeader = By.xpath("//span[text()='Student Waiver']");
+    private By applyWaiverBtn = By.xpath("//button[text()='Apply Waiver']");
+    private By waiverTable = By.cssSelector("table.fee-structure-table-v2_table__gVrp4");
 
 
 
@@ -65,12 +73,33 @@ public class StudentFeeDetailsPage {
         return eleUtil.isElementDisplayed(addFeeEntryBtn);
     }
     public boolean setCapturePaymentBtn(){
-
-       eleUtil.waitforElementVisible(capturePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(capturePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.scrollToElement(capturePaymentBtn);
-       eleUtil.waitforElementVisible(makePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
-       return eleUtil.isElementDisplayed(makePaymentBtn);
+        eleUtil.waitforElementVisible(makePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(makePaymentBtn);
     }
+    public boolean setTransactionTable(){
+        eleUtil.waitforElementVisible(transactionBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.scrollToElement(transactionBtn);
+        eleUtil.waitforElementVisible(transactionHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.doClick(downloadBtn);
+        return eleUtil.isElementDisplayed(transactionTable);
+    }
+    public boolean setRefundBtn(){
+        eleUtil.waitforElementVisible(refundBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.scrollToElement(refundBtn);
+        eleUtil.waitforElementVisible(refundHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.doClick(applyRefundBtn);
+        return eleUtil.isElementDisplayed(applyRefundBtn);
+    }
+    public boolean setWaiverBtn(){
+        eleUtil.waitforElementVisible(waiverBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.scrollToElement(waiverBtn);
+        eleUtil.waitforElementVisible(waiverHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.doClick(applyWaiverBtn);
+        return eleUtil.isElementDisplayed(applyWaiverBtn);
+    }
+
 
 
 }

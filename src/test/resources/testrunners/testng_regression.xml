@@ -21,14 +21,21 @@
     <classes>
         <class name="com.qa.instituteDashboard.tests.DashBoardPageTest"></class>
     </classes>
-</test>
+   </test>
 
- <test  name="StudentList Page Test" >
+   <test  name="StudentList Page Test" >
      <parameter name="browser" value="chrome"/>
       <classes>
         <class name="com.qa.instituteDashboard.tests.StudentDetailsPageTest"></class>
       </classes>
-     </test>
+   </test>
+
+    <test  name="Student Fee Details Page Test" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.qa.instituteDashboard.tests.StudentFeeDetailsPageTest"></class>
+        </classes>
+    </test>
 
     <test  name="Loans Page Test" >
      <parameter name="browser" value="edge"/>
@@ -62,6 +69,13 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.qa.instituteDashboard.tests.Leo1CardPageTest"></class>
+        </classes>
+    </test>
+
+    <test  name="File Manager Page Test" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.qa.instituteDashboard.tests.FileManagerPageTest"></class>
         </classes>
     </test>
 </suite>

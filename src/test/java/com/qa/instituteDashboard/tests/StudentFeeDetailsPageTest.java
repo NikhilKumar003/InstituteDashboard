@@ -2,10 +2,8 @@ package com.qa.instituteDashboard.tests;
 
 import com.qa.instituteDashboard.base.BaseTest;
 import com.qa.instituteDashboard.constants.AppConstants;
-import org.checkerframework.checker.units.qual.A;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class StudentFeeDetailsPageTest extends BaseTest {
@@ -56,5 +54,21 @@ public class StudentFeeDetailsPageTest extends BaseTest {
         Assert.assertTrue(studentFeeDetailsPage.setCapturePaymentBtn());
         studentListPage.setCloseBtn();
     }
+    @Test
+    public void setTransactionTableTest(){
+        Assert.assertTrue(studentFeeDetailsPage.setTransactionTable());
+        studentFeeDetailsPage.setCloseBtn();
+    }
+    @Test
+    public void setRefundTest(){
+        Assert.assertTrue(studentFeeDetailsPage.setRefundBtn());
+        studentFeeDetailsPage.setCloseBtn();
+    }
+    @Test
+    public void setWaiverTest(){
+        Assert.assertTrue(studentFeeDetailsPage.setWaiverBtn());
+        studentFeeDetailsPage.setCloseBtn();
+    }
+
 
 }
