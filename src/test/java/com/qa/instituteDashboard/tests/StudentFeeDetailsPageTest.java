@@ -69,6 +69,10 @@ public class StudentFeeDetailsPageTest extends BaseTest {
         Assert.assertTrue(studentFeeDetailsPage.setWaiverBtn());
         studentFeeDetailsPage.setCloseBtn();
     }
+    @Test
+    public void setAddNewFeeEntryTest(){
+     studentFeeDetailsPage.setAddNewFeeEntry();
+    }
 
 
 }

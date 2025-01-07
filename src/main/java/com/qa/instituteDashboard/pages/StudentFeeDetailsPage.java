@@ -32,6 +32,12 @@ public class StudentFeeDetailsPage {
     private By waiverHeader = By.xpath("//span[text()='Student Waiver']");
     private By applyWaiverBtn = By.xpath("//button[text()='Apply Waiver']");
     private By waiverTable = By.cssSelector("table.fee-structure-table-v2_table__gVrp4");
+    private By addFeeEntryHeader = By.xpath("//span[text()='Add New Fee Entry']");
+    private By dateField = By.xpath("//input[@placeholder='Fee Due Date']");
+    private By amountfield = By.xpath("//input[@placeholder='Enter Fee Amount']");
+    private By selectFeeType = By.cssSelector(" div.css-19bb58m");
+    private By feeDescriptionField = By.xpath("//input[@placeholder='Enter Fee Description']");
+    private By addNewFeeBtn = By.xpath("//button[text()='Add New Fees']");
 
 
 
@@ -99,7 +105,14 @@ public class StudentFeeDetailsPage {
         eleUtil.doClick(applyWaiverBtn);
         return eleUtil.isElementDisplayed(applyWaiverBtn);
     }
+    public void setAddNewFeeEntry(){
+        eleUtil.waitforElementVisible(viewUpdateBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(addFeeEntryBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(addFeeEntryHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
 
+
+
+    }
 
 
 }
