@@ -23,6 +23,7 @@ public class BaseTest {
     protected Leo1CardPage leo1CardPage;
     protected FileManagerPage fileManagerPage;
     protected StudentFeeDetailsPage studentFeeDetailsPage;
+    protected SummaryPage summaryPage;
 
     @BeforeTest
     public void setup(){

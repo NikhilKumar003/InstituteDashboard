@@ -151,9 +151,9 @@ public class DashBoardPage {
         eleUtil.waitforElementVisible(feeReiubursmentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         return new  BulkActionPage(driver);
     }
-    public CoinsRequestPage setSummaryPage(){
+    public SummaryPage setSummaryPage(){
         eleUtil.waitforElementVisible(summaryBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
-        return new  CoinsRequestPage(driver);
+        return new  SummaryPage(driver);
     }
     public Leo1CardPage setCardDashboardPage(){
         eleUtil.waitforElementVisible(leo1CardBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
