@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class SummaryPageTest extends BaseTest {
 
     @BeforeClass
@@ -22,6 +24,23 @@ public class SummaryPageTest extends BaseTest {
     @Test
     public void isSummaryHeaderExist(){
         Assert.assertTrue(summaryPage.isFeeSummaryHeaderExist());
+    }
+    @Test
+    public void getFeeSummaryHeadersListTest(){
+       List<String> headerTextList = summaryPage.getFeeSummaryHeadersList();
+       Assert.assertEquals(headerTextList,AppConstants.EXPECTED_FEE_SUMMARY_HEADERS_LIST);
+    }
+    @Test
+    public void getColumnHeaderListTest(){
+        Assert.assertTrue(summaryPage.getCountOfHeadersList());
+    }
+    @Test(priority = Integer.MAX_VALUE-1)
+    public void getSummaryHeadersViewTest(){
+        summaryPage.getSummaryHeadersView();
+    }
+    @Test(priority = Integer.MAX_VALUE)
+    public void isSubmitBtnExistTest(){
+        Assert.assertTrue(summaryPage.isSubmitBtnExist());
     }
 
 }

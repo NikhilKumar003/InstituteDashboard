@@ -36,10 +36,13 @@ public class AppConstants {
     public static final List<String> EXPECTED_DASHBOARD_HEADERS_LIST = List.of("Dashboard","Add Student", "File Manager");
     public static final List<String> EXPECTED_FEEPAYMENT_HEADERS_LIST = List.of("Summary","Student List", "Fee Structure","Coins Request", "Bulk Actions");
     public static final List<String> EXPECTED_STUDENT_LIST_HEADERS_LIST = List.of("Student ID","Student Details", "Institute Details","Actions", "Fee Details");
+    public static final List<String> EXPECTED_FEE_SUMMARY_HEADERS_LIST = List.of("Fee Summary - Overall","Fee Summary - GTPL LEO1 CARD", "Fee Summary - TEST TRANSCORPA");
+
 
     public static final int ACCOUNT_PAGE_HEADERS_COUNT = 3;
     public static final int STUDENT_LIST_HEADERS_COUNT = 5;
     public static final int FEE_MANAGER_LIST_HEADERS_COUNT = 6;
+    public static final int FEE_SUMMARY_LIST_HEADER_COUNT =3;
 
     public static final String STUDENT_MOBILE_NO = "7842290549";
     public static final String LOAN_STATUS = "Documents pending";
