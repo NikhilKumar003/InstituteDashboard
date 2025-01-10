@@ -79,7 +79,7 @@
         </classes>
     </test>
 
-    <test  name="File Manager Page Test" >
+    <test  name="Fee Summary Page Test" >
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.qa.instituteDashboard.tests.SummaryPageTest"></class>
