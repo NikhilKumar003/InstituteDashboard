@@ -44,12 +44,12 @@ public class StudentFeeDetailsPageTest extends BaseTest {
     public void isWaiverBtnExistTest(){
         Assert.assertTrue(studentFeeDetailsPage.isWaiverBtnExist());
     }
-    @Test(priority = Integer.MAX_VALUE-1)
+    @Test(priority = Integer.MAX_VALUE-2)
     public void isAddFeeEntryBtnExistTest(){
         Assert.assertTrue(studentFeeDetailsPage.isAddFeeEntryBtn());
         studentListPage.setCloseBtn();
     }
-    @Test(priority = Integer.MAX_VALUE)
+    @Test(priority = Integer.MAX_VALUE-1)
     public void setCapturePaymentBtnTest(){
         Assert.assertTrue(studentFeeDetailsPage.setCapturePaymentBtn());
         studentListPage.setCloseBtn();
@@ -69,7 +69,7 @@ public class StudentFeeDetailsPageTest extends BaseTest {
         Assert.assertTrue(studentFeeDetailsPage.setWaiverBtn());
         studentFeeDetailsPage.setCloseBtn();
     }
-    @Test
+    @Test(priority = Integer.MAX_VALUE)
     public void setAddNewFeeEntryTest(){
      studentFeeDetailsPage.setAddNewFeeEntry();
     }
