@@ -19,7 +19,13 @@ public class SummaryPage {
     private By feeSummaryHeader1 = By.xpath("//h1[contains(text(),'GTPL')]");
     private By feeSummaryHeader2 = By.xpath("//h1[contains(text(),'TRANSCORP')]");
     private By submitBtn = By.xpath("//button[text()='Submit']");
-
+    private By totalFeesList = By.cssSelector("div.margin-bottom-9 div.col-md-4");
+    private By paymentTimeGraph = By.xpath("//div[text()='Payment Trend - Time']");
+    private By paymentTrendGraph = By.xpath("//div[text()='Payment Trend - Method']");
+    private By dayBtn = By.xpath("//div[text()='Day']");
+    private By monthBtn = By.xpath("//div[text()='Month']");
+    private By yearBtn = By.xpath("//div[text()='Year']");
+    private By graph = By.cssSelector("#container");
 
     public SummaryPage(WebDriver driver){
         this.driver = driver;
@@ -62,7 +68,26 @@ public class SummaryPage {
         eleUtil.scrollToElement(submitBtn);
        return eleUtil.isElementDisplayed(submitBtn);
     }
-
+    public boolean getTotalFeeTrends(){
+        eleUtil.waitforElementpresence(totalFeesList,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.scrollToElement(totalFeesList);
+        return eleUtil.isElementDisplayed(totalFeesList);
+    }
+    public boolean getPaymentTimeGraph(){
+        eleUtil.waitforElementpresence(paymentTimeGraph,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.scrollToElement(paymentTimeGraph);
+        return eleUtil.isElementDisplayed(paymentTimeGraph);
+    }
+    public boolean getPaymentTrendGraph(){
+        eleUtil.waitforElementpresence(paymentTrendGraph,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.scrollToElement(paymentTrendGraph);
+        return eleUtil.isElementDisplayed(paymentTrendGraph);
+    }
+    public boolean isGraphExist(){
+        eleUtil.waitforElementpresence(graph,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.scrollToElement(graph);
+        return eleUtil.isElementDisplayed(graph);
+    }
 
 
 }

@@ -42,5 +42,21 @@ public class SummaryPageTest extends BaseTest {
     public void isSubmitBtnExistTest(){
         Assert.assertTrue(summaryPage.isSubmitBtnExist());
     }
+    @Test
+    public void getTotalFeeTrendsText(){
+        Assert.assertTrue(summaryPage.getTotalFeeTrends());
+    }
+    @Test
+    public void getPaymentTimeGraph(){
+        Assert.assertTrue(summaryPage.getPaymentTimeGraph());
+    }
+    @Test
+    public void getPaymentTrendGraph(){
+        Assert.assertTrue(summaryPage.getPaymentTrendGraph());
+    }
+    @Test
+    public void isGraphExistTest(){
+        Assert.assertTrue(summaryPage.isGraphExist());
+    }
 
 }
