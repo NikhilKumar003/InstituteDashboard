@@ -26,6 +26,7 @@ public class SummaryPage {
     private By monthBtn = By.xpath("//div[text()='Month']");
     private By yearBtn = By.xpath("//div[text()='Year']");
     private By graph = By.cssSelector("#container");
+    private By dateText = By.xpath("//div[text()='Date']");
 
     public SummaryPage(WebDriver driver){
         this.driver = driver;
@@ -88,6 +89,13 @@ public class SummaryPage {
         eleUtil.scrollToElement(graph);
         return eleUtil.isElementDisplayed(graph);
     }
-
+    public boolean getDayMonthYearBtns(){
+        getPaymentTimeGraph();
+        eleUtil.scrollToElement(dateText);
+        eleUtil.waitforElementVisible(dayBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(monthBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
+        eleUtil.waitforElementVisible(yearBtn,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(paymentTimeGraph);
+    }
 
 }
