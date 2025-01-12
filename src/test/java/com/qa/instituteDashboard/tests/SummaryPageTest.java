@@ -58,5 +58,9 @@ public class SummaryPageTest extends BaseTest {
     public void isGraphExistTest(){
         Assert.assertTrue(summaryPage.isGraphExist());
     }
+    @Test
+    public void getDayMonthYearBtnsTest(){
+        Assert.assertTrue(summaryPage.getDayMonthYearBtns());
+    }
 
 }
