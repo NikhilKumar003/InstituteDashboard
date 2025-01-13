@@ -37,11 +37,11 @@ public class FeeStructurePageTest extends BaseTest {
     }
     @Test
     public void isCourseBtnExistTest() {
-        Assert.assertTrue(feeStructurePage.isResetBtnExist());
+        Assert.assertTrue(feeStructurePage.isCourseBtnExist());
     }
     @Test
     public void isClassBtnExistTest() {
-        Assert.assertTrue(feeStructurePage.isResetBtnExist());
+        Assert.assertTrue(feeStructurePage.isClassBtnExist());
     }
     @Test
     public void isDownloadBtnExistTest() {
