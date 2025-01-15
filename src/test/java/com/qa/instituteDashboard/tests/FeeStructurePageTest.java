@@ -47,4 +47,8 @@ public class FeeStructurePageTest extends BaseTest {
     public void isDownloadBtnExistTest() {
         Assert.assertTrue(feeStructurePage.isDownloadBtnExist());
     }
+    @Test(priority = Integer.MAX_VALUE)
+    public void addCourseBtnTest(){
+        Assert.assertTrue(feeStructurePage.addCourseBtn());
+    }
 }
