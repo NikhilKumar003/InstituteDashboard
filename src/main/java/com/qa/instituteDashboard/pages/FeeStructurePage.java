@@ -25,7 +25,9 @@ public class FeeStructurePage  {
     private By classNoText = By.xpath("//input[@type='number']");
     private By nextBtn = By.xpath("(//img[@decoding='async'])[10]");
     private By addCourseBtn =By.xpath("//button[text()='Add New Course']");
-
+    private By addNewClassHeader = By.xpath("//span[contains(text(),'Add New Class/')]");
+    private By saveBtn = By.xpath("//button[contains(text(),'Save Details')]");
+    private By closeBtn = By.xpath("//img[@alt='close']");
 
 
     public FeeStructurePage(WebDriver driver) {
@@ -73,6 +75,14 @@ public class FeeStructurePage  {
         eleUtil.waitforElementpresence(nextBtn,AppConstants.DEFAULT_LONG_TIME_OUT).click();
         eleUtil.waitforElementpresence(addCourseBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
        return  eleUtil.isElementDisplayed(addCourseBtn);
+    }
+    public boolean addclassBtn(){
+        eleUtil.waitforElementpresence(classBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementpresence(addNewClassHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        return eleUtil.isElementDisplayed(saveBtn);
+    }
+    public void setCloseBtn(){
+        eleUtil.doClick(closeBtn);
     }
 
 }
