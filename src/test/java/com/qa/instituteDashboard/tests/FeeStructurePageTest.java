@@ -56,4 +56,9 @@ public class FeeStructurePageTest extends BaseTest {
         Assert.assertTrue(feeStructurePage.addclassBtn());
         feeStructurePage.setCloseBtn();
     }
+    @Test
+    public void selectBranchTest(){
+        Assert.assertTrue(feeStructurePage.selectBranch());
+    }
+
 }

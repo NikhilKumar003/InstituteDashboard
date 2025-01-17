@@ -28,6 +28,9 @@ public class FeeStructurePage  {
     private By addNewClassHeader = By.xpath("//span[contains(text(),'Add New Class/')]");
     private By saveBtn = By.xpath("//button[contains(text(),'Save Details')]");
     private By closeBtn = By.xpath("//img[@alt='close']");
+    private By branchDropDown = By.xpath("(//div[contains(@class, 'css-1dimb5e-singleValue')])[last()]");
+    private By totalStudentText = By.xpath("(//div[contains(@class,'text-right')])");
+
 
 
     public FeeStructurePage(WebDriver driver) {
@@ -84,5 +87,13 @@ public class FeeStructurePage  {
     public void setCloseBtn(){
         eleUtil.doClick(closeBtn);
     }
+    public boolean selectBranch(){
+        eleUtil.waitforElementpresence(instituteDD,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.selectDropDownText(branchDD, "MUMBAI");
+        eleUtil.scrollToElement(totalStudentText);
+        return eleUtil.isElementDisplayed(totalStudentText);
+
+    }
+
 
 }
