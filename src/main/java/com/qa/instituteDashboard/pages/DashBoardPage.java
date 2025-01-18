@@ -38,8 +38,8 @@ public class DashBoardPage {
     private By preIssuanceBtn= By.xpath("//span[contains(text(),'Pre-Issuance')]");
     private By cardDashboardBtn= By.xpath("(//span[contains(text(),'Dashboard')])[2]");
     private By fileManagerBtn = By.xpath("//span[contains(text(),'File Manager')]");
-
-
+    private By submitBtn = By.xpath("//button[text()='Submit']");
+    private By applicationModel = By.cssSelector("div.modal-content");
 
 
     public DashBoardPage(WebDriver driver){
@@ -109,7 +109,13 @@ public class DashBoardPage {
     }
     public boolean setLoanAppBtn(){
         eleUtil.waitforElementVisible(loanApplicationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementpresence(applicationModel,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         return eleUtil.isElementDisplayed(allApplicationBtn);
+
+    }
+    public boolean setCreateApplicationBtn(){
+        eleUtil.waitforElementpresence(createApplicationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        return eleUtil.isElementDisplayed(submitBtn);
 
     }
     public List<String> getFeePaymentList(){

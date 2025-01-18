@@ -87,4 +87,8 @@ public class DashBoardPageTest extends BaseTest {
         String studentUrl =studentListPage.getPageUrl();
         Assert.assertTrue(studentUrl.contains(AppConstants.STUDENT_LIST_PAGE_FRACTION_URL));
     }
+    @Test
+    public void setCreateApplicationBtnTest(){
+        Assert.assertTrue(dashBoardPage.setCreateApplicationBtn());
+    }
 }
