@@ -30,7 +30,8 @@ public class AddStudentPage {
     private By submitBtn = By.xpath("//button[text()='Submit']");
     private By optionalText = By.xpath("//h3[text()='Optional Fields']");
     private By resetBtn = By.cssSelector("button.PrimaryButton_button__tfJh7.pl-4.pr-4.d-flex.align-items-center");
-
+    private By alternateMobile = By.xpath("//input[@placeholder='Alternate Mobile Number']");
+    private By genderSelect = By.cssSelector("div.css-hlgwow div.css-1jqq78o-placeholder");
 
 
     public AddStudentPage(WebDriver driver) {
@@ -51,7 +52,7 @@ public class AddStudentPage {
         eleUtil.waitforElementVisible(resetBtn, AppConstants.DEFAULT_SHORT_TIME_OUT);
         return eleUtil.isElementDisplayed(resetBtn);
     }
-    public String createNewStudent(String institute,String branch,String stName,String mobile, String stId,String course, String clsName,String mail, String parent, String parMobile,String dob, String kyc){
+    public String createNewStudent(String institute,String branch,String stName,String mobile, String stId,String course, String clsName,String mail, String parent, String parMobile,String dob, String altMobile,String gender){
         eleUtil.waitforElementVisible(instiuteDD,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         eleUtil.selectDropDownText(instiuteDD, institute);
         eleUtil.selectDropDownText(branchDD, branch);
@@ -70,7 +71,8 @@ public class AddStudentPage {
         eleUtil.doClick(NextBtn);
         eleUtil.waitForElementsVisible(optionalText,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         eleUtil.doSendKeys(stDOB,dob);
-        eleUtil.doSendKeys(minKycId,kyc);
+        eleUtil.selectDropDownText(genderSelect, gender);
+        eleUtil.doSendKeys(alternateMobile,altMobile);
         eleUtil.doClick(submitBtn);
         String text=  eleUtil.waitforElementVisible(addStudentHeader,AppConstants.DEFAULT_LONG_TIME_OUT).getText();
         return text;
