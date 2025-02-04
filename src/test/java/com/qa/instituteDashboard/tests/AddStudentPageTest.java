@@ -43,7 +43,7 @@ public class AddStudentPageTest extends BaseTest {
         String txt =  addStudentPage.createNewStudent(prop.getProperty("instituteName"), prop.getProperty("branchName"),
                 "Test Nikhil for Nach",getMobileNumber(),getStudentId(), prop.getProperty("courseName"), prop.getProperty("className"),
                 "nikhil.kumar@leo1.in","Test Father",
-                "8909123245","12-09-2000","QWERT3456K");
+                "8909123245","12-09-2000","9054653278", prop.getProperty("gender"));
         Assert.assertEquals(txt, AppConstants.ADD_STUDENT_HEADER);
 //        studentListPage.setSearchBtn(getMobileNumber());
     }
