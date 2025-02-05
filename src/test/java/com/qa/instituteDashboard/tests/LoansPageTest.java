@@ -11,7 +11,7 @@ public class LoansPageTest extends BaseTest {
     @BeforeClass
     public void loginSetup(){
         dashBoardPage= loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
-        dashBoardPage.setLoanAppBtn();
+//        dashBoardPage.setLoanAppBtn();
         loansPage =dashBoardPage.setAllLoansPage();
     }
     @Test

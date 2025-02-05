@@ -109,7 +109,7 @@ public class DashBoardPage {
     }
     public boolean setLoanAppBtn(){
         eleUtil.waitforElementVisible(loanApplicationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
-        eleUtil.waitforElementpresence(applicationModel,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.waitforElementpresence(allApplicationBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         return eleUtil.isElementDisplayed(allApplicationBtn);
 
     }
@@ -133,7 +133,7 @@ public class DashBoardPage {
       return new  StudentListPage(driver);
     }
     public LoanApplicationPage setAllLoansPage(){
-//        eleUtil.waitforElementVisible(loanApplicationBtn, AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        eleUtil.waitforElementVisible(loanApplicationBtn, AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.waitforElementVisible(allApplicationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         return new  LoanApplicationPage(driver);
     }
