@@ -36,6 +36,9 @@ public class JavaScriptUtil {
     public void scrollToPageDown() {
         js.executeScript("window.scroll(0,document.body.scrollHeight)");
     }
+    public void scrollToPageHorizontal() {
+        js.executeScript("window.scroll(document.body.scrollHeight,0)");
+    }
     public void scrollToPagemiddle() {
         js.executeScript("window.scroll(0,document.body.scrollHeight/2)");
     }

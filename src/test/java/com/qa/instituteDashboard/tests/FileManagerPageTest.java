@@ -35,4 +35,8 @@ public class FileManagerPageTest extends BaseTest {
         int count = fileManagerPage.getcolomnListHeaderCount();
         Assert.assertEquals(count,AppConstants.FEE_MANAGER_LIST_HEADERS_COUNT);
     }
+    @Test
+    public void isDownloadBtnExistTest(){
+        Assert.assertTrue(fileManagerPage.isDownloadBtnExist());
+    }
 }
