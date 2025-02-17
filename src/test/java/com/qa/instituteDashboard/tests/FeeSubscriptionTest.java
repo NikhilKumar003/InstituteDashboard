@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class FeeSubscriptionTest extends BaseTest {
 
     @BeforeClass
@@ -31,6 +33,23 @@ public class FeeSubscriptionTest extends BaseTest {
     public void isMandateDropDownExistTest(){
         Assert.assertTrue(feeSubscriptionPage.isMandateDropDownExist());
     }
-
+    @Test
+    public void isResetBtnExistTest(){
+        Assert.assertTrue(feeSubscriptionPage.isResetBtnExist());
+    }
+    @Test(priority = Integer.MAX_VALUE-3)
+    public void getColomnCount(){
+        int count =feeSubscriptionPage.getColomnListHeaderCount();
+        Assert.assertEquals(count,AppConstants.FEE_SUBSCRIPTION_LIST_HEADER_COUNT);
+    }
+    @Test(priority = Integer.MAX_VALUE-2)
+    public void getColomnHeaderList(){
+        List<String> headerListText= feeSubscriptionPage.getClomnListHeaderList();
+        Assert.assertEquals(headerListText,AppConstants.EXPECTED_STUDENT_LIST_HEADERS_LIST);
+    }
+    @Test(priority = Integer.MAX_VALUE-1 )
+    public void isMessageBtnExistTest(){
+        Assert.assertTrue(feeSubscriptionPage.isMessageBtnExist());
+    }
 
 }
