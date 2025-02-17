@@ -48,8 +48,8 @@ public class FileManagerPage {
         eleUtil.scrollToElement(downloadHeader);
         jsUtil.scrollToPageHorizontal();
         return eleUtil.isElementDisplayed(downlaodBtn);
-
     }
+//    public
 
 
 

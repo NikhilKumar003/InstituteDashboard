@@ -24,6 +24,7 @@ public class BaseTest {
     protected FileManagerPage fileManagerPage;
     protected StudentFeeDetailsPage studentFeeDetailsPage;
     protected SummaryPage summaryPage;
+    protected FeeSubscriptionPage feeSubscriptionPage;
 
     @BeforeTest
     public void setup(){

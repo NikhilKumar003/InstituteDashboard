@@ -31,6 +31,8 @@ public class AppConstants {
     public static final String FILE_MANAGER_PAGE_FRACTION_URL= "fee-payment/file-manager";
     public static final String STUDENT_FEE_DETAILS_PAGE_FRACTION_URL ="GTPL%20LEO1%20CARD/students";
     public static final String SUMMARY_PAGE_FRACTION_URL ="fee-payment/summary";
+    public static final String FEE_SUBSCRIPTION_FRACTION_URL ="fee-subscription/registration";
+
 
     //    Headers List
     public static final List<String> EXPECTED_DASHBOARD_HEADERS_LIST = List.of("Dashboard","Add Student", "File Manager");

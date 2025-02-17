@@ -40,6 +40,8 @@ public class DashBoardPage {
     private By fileManagerBtn = By.xpath("//span[contains(text(),'File Manager')]");
     private By submitBtn = By.xpath("//button[text()='Submit']");
     private By applicationModel = By.cssSelector("div.modal-content");
+    private By feeSubscriptionBtn =  By.xpath("//span[text()='Fee Subscription']");
+    private By registrationBtn = By.xpath("//span[contains(text(),'Registration')]");
 
 
     public DashBoardPage(WebDriver driver){
@@ -170,5 +172,13 @@ public class DashBoardPage {
     public FileManagerPage setFileManagerPage(){
         eleUtil.waitforElementVisible(fileManagerBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         return new FileManagerPage(driver);
+    }
+    public boolean setFeeSubscriptionBtn(){
+        eleUtil.waitforElementVisible(feeSubscriptionBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
+        return eleUtil.isElementDisplayed(feeSubscriptionBtn);
+    }
+    public FeeSubscriptionPage setFeeRegistrationPage(){
+        eleUtil.waitforElementVisible(registrationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
+        return new FeeSubscriptionPage(driver);
     }
 }
