@@ -85,4 +85,11 @@
             <class name="com.qa.instituteDashboard.tests.SummaryPageTest"></class>
         </classes>
     </test>
+
+    <test  name="Fee Subscription Page Test" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.qa.instituteDashboard.tests.FeeSubscriptionTest"></class>
+        </classes>
+    </test>
 </suite>

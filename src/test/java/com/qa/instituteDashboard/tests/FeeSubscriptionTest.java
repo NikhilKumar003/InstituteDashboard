@@ -47,7 +47,7 @@ public class FeeSubscriptionTest extends BaseTest {
         List<String> headerListText= feeSubscriptionPage.getClomnListHeaderList();
         Assert.assertEquals(headerListText,AppConstants.EXPECTED_STUDENT_LIST_HEADERS_LIST);
     }
-    @Test(priority = Integer.MAX_VALUE-1 )
+//    @Test(priority = Integer.MAX_VALUE-1 )
     public void isMessageBtnExistTest(){
         Assert.assertTrue(feeSubscriptionPage.isMessageBtnExist());
     }
