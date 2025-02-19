@@ -33,6 +33,7 @@ public class AppConstants {
     public static final String STUDENT_FEE_DETAILS_PAGE_FRACTION_URL ="GTPL%20LEO1%20CARD/students";
     public static final String SUMMARY_PAGE_FRACTION_URL ="fee-payment/summary";
     public static final String FEE_SUBSCRIPTION_FRACTION_URL ="fee-subscription/registration";
+    public static final String LOAN_SUMMARY_PAGE_FRACTION_URL ="applications/loan-summary";
 
 
     //    Headers List
