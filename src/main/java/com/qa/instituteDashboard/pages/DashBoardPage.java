@@ -28,20 +28,18 @@ public class DashBoardPage {
     private By changeRegistrationBtn= By.xpath("//a[.='Change Registered Ph.']");
     private By resetStudentPasswordBtn= By.xpath("//a[.='Reset student password']");
     private By feeReiubursmentBtn= By.xpath("//span[text()='Fee Reimbursement']");
-    private By createApplicationBtn= By.xpath("//span[text()='Create application']");
     private By welcomeText= By.cssSelector("#MainScrollbar h2");
     private By sideHeaders= By.cssSelector("#containerSidebar .ps-menu-root span.Sidebar_MenuActiveItemText__6_E5Q");
     private By navBar= By.xpath("//img[@alt='toggle menu']");
-    private By resetBtn = By.xpath("//span[text()='Reset']");
     private By feePaymentList= By.xpath("//*[@id='containerSidebar']/nav/ul/div[3]/ul/li");
     private By leo1CardBtn= By.xpath("//span[contains(text(),'Leo1 Card')]");
     private By preIssuanceBtn= By.xpath("//span[contains(text(),'Pre-Issuance')]");
     private By cardDashboardBtn= By.xpath("(//span[contains(text(),'Dashboard')])[2]");
     private By fileManagerBtn = By.xpath("//span[contains(text(),'File Manager')]");
-    private By submitBtn = By.xpath("//button[text()='Submit']");
     private By applicationModel = By.cssSelector("div.modal-content");
     private By feeSubscriptionBtn =  By.xpath("//span[text()='Fee Subscription']");
     private By registrationBtn = By.xpath("//span[contains(text(),'Registration')]");
+    private By loanSummaryBtn =By.xpath("(//span[contains(text(),'Summary')])[2]");
 
 
     public DashBoardPage(WebDriver driver){
@@ -78,9 +76,6 @@ public class DashBoardPage {
         }
         return headerList;
     }
-    public boolean isCreateApplicationExist(){
-       return eleUtil.isElementDisplayed(createApplicationBtn);
-    }
     public boolean isResetPasswordExist(){
         return eleUtil.isElementDisplayed(resetStudentPasswordBtn);
     }
@@ -101,9 +96,6 @@ public class DashBoardPage {
     public boolean isFeePaymentExist(){
         return eleUtil.isElementDisplayed(feePaymentBtn);
     }
-    public boolean isResetBtnExist(){
-        return eleUtil.isElementDisplayed(resetBtn);
-    }
     public boolean setFeePaymentBtn(){
         eleUtil.waitforElementVisible(feePaymentBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         return eleUtil.isElementDisplayed(studentListBtn);
@@ -113,11 +105,6 @@ public class DashBoardPage {
         eleUtil.waitforElementVisible(loanApplicationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         eleUtil.waitforElementpresence(allApplicationBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         return eleUtil.isElementDisplayed(allApplicationBtn);
-
-    }
-    public boolean setCreateApplicationBtn(){
-        eleUtil.waitforElementpresence(createApplicationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
-        return eleUtil.isElementDisplayed(submitBtn);
 
     }
     public List<String> getFeePaymentList(){
@@ -180,5 +167,10 @@ public class DashBoardPage {
     public FeeSubscriptionPage setFeeRegistrationPage(){
         eleUtil.waitforElementVisible(registrationBtn,AppConstants.DEFAULT_SHORT_TIME_OUT).click();
         return new FeeSubscriptionPage(driver);
+    }
+    public SummaryLoansPage setLoanSummaryPage(){
+        eleUtil.waitforElementpresence(loanApplicationBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
+        eleUtil.waitforElementpresence(loanSummaryBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
+        return new SummaryLoansPage(driver);
     }
 }

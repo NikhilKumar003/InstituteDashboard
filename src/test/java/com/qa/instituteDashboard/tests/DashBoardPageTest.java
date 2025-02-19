@@ -42,10 +42,6 @@ public class DashBoardPageTest extends BaseTest {
         Assert.assertEquals(expectedHeaders, AppConstants.EXPECTED_DASHBOARD_HEADERS_LIST);
     }
     @Test
-    public void isCreateApplicationExistTest(){
-        Assert.assertTrue(dashBoardPage.isCreateApplicationExist());
-    }
-    @Test
     public void isResetPwdBtnExistTest(){
         Assert.assertTrue(dashBoardPage.isResetPasswordExist());
     }
@@ -61,11 +57,7 @@ public class DashBoardPageTest extends BaseTest {
     public void isNavBarExistTest(){
         Assert.assertTrue(dashBoardPage.isNavBarExist());
     }
-    @Test
-    public void isResetBtnExistTest(){
-        Assert.assertTrue(dashBoardPage.isResetBtnExist());
-    }
-    @Test
+     @Test
     public void getNavBarTest(){
         dashBoardPage.setNavBar();
        Assert.assertTrue(dashBoardPage.isFeePaymentExist());
@@ -87,8 +79,5 @@ public class DashBoardPageTest extends BaseTest {
         String studentUrl =studentListPage.getPageUrl();
         Assert.assertTrue(studentUrl.contains(AppConstants.STUDENT_LIST_PAGE_FRACTION_URL));
     }
-    @Test
-    public void setCreateApplicationBtnTest(){
-        Assert.assertTrue(dashBoardPage.setCreateApplicationBtn());
-    }
+
 }
