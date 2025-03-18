@@ -40,7 +40,8 @@ public class LoanApplicationPage {
         eleUtil.doClick(resetBtn);
         eleUtil.waitforElementVisible(searchField, AppConstants.DEFAULT_SHORT_TIME_OUT).sendKeys(mobile);
 //        eleUtil.waitforElementpresence(verifyMobile,AppConstants.DEFAULT_LONG_TIME_OUT);
-        String mobileText =eleUtil.waitforElementVisible(verifyMobile,AppConstants.DEFAULT_SHORT_TIME_OUT).getText();
+        eleUtil.waitforElementpresence(resetBtn,AppConstants.DEFAULT_LONG_TIME_OUT);
+        String mobileText =eleUtil.waitforElementVisible(verifyMobile,AppConstants.DEFAULT_LONG_TIME_OUT).getText();
         if(mobile.equals(mobileText)) {
             return mobileText;
 

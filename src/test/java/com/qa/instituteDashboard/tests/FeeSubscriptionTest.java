@@ -74,7 +74,7 @@ public class FeeSubscriptionTest extends BaseTest {
         feeSubscriptionPage.selectNameAndMandate();
         feeSubscriptionPage.sendRegistrationBtnExist();
     }
-    @Test
+    @Test(priority = Integer.MAX_VALUE)
     public void setReportPageTest(){
        Assert.assertTrue(feeSubscriptionPage.setReportPage());
     }
