@@ -6,24 +6,19 @@ import com.qa.instituteDashboard.utils.JavaScriptUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AddStudentPage {
+public class AddStudentUat {
     private WebDriver driver;
     private ElementUtil eleUtil;
     private JavaScriptUtil jsUtil;
 
     private By addStudentHeader = By.xpath("//h2[text()='Add Student']");
-    private By mandatoryHeader = By.xpath("//h3[text()='Mandatory Fields']");
     private By instiuteDD = By.xpath("//div[contains(@class, ' css-19bb58m')]");
     private By branchDD = By.xpath("(//div[@class= ' css-19bb58m'])[2]");
     private By studentName = By.xpath("//input[@placeholder='Student Name']");
     private By stMobileNumber = By.xpath("//input[@placeholder='Student Mobile Number']");
     private By studentId = By.xpath("//input[@placeholder='Student Id']");
     private By selectCourseDD = By.xpath("//div[contains(@class, ' css-yi2ntm-control')]");
-//    private By selectCourse = By.xpath("//div[text()='FEE SLAB JECRC']");
-    private By classNameHeader = By.xpath("//div[text()='Class Name*:']");
-//    private By selectClassDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[2]");
     private By selectClassDD = By.cssSelector("#react-select-3-placeholder");
-//    private By selectClass = By.xpath("//h2[text()='Add Student']");
     private By emailId = By.cssSelector("input[placeholder='Email Id']");
     private By parentName = By.cssSelector("input[placeholder='Parent Name']");
     private By parentNumber= By.cssSelector("input[placeholder='Parent Mobile Number']");
@@ -37,26 +32,8 @@ public class AddStudentPage {
     private By genderSelect = By.cssSelector("div.css-hlgwow div.css-1jqq78o-placeholder");
 
 
-    public AddStudentPage(WebDriver driver) {
-        this.driver=driver;
-        eleUtil = new ElementUtil(driver);
-        jsUtil = new JavaScriptUtil(driver);
-    }
-    public String getPageUrl(){
-        String Url=  eleUtil.waitforURLContainsAndReturns(AppConstants.ADD_STUDENT_PAGE_FRACTION_URL,AppConstants.DEFAULT_SHORT_TIME_OUT);
-        System.out.println(Url);
-        return Url;
-    }
-    public boolean isAddStudentHeaderExist(){
-        eleUtil.waitforElementpresence(addStudentHeader, AppConstants.DEFAULT_SHORT_TIME_OUT);
-        return eleUtil.isElementDisplayed(addStudentHeader);
-    }
-    public boolean isResetBtnExist(){
-        eleUtil.waitforElementVisible(resetBtn, AppConstants.DEFAULT_SHORT_TIME_OUT);
-        return eleUtil.isElementDisplayed(resetBtn);
-    }
     public String createNewStudent(String institute,String branch,String stName,String mobile, String stId,String course, String clsName,String mail, String parent, String parMobile,String dob, String altMobile,String gender){
-        eleUtil.waitforElementVisible(instiuteDD,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+        eleUtil.waitforElementVisible(instiuteDD, AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         eleUtil.selectDropDownText(instiuteDD, institute);
         eleUtil.selectDropDownText(branchDD, branch);
         jsUtil.scrollIntoView(driver.findElement(emailId));
@@ -65,7 +42,7 @@ public class AddStudentPage {
         eleUtil.doSendKeys(stMobileNumber,mobile);
         eleUtil.doSendKeys(studentId,stId);
         eleUtil.selectDropDownText(selectCourseDD,course);
-        eleUtil.isElementEnabled(classNameHeader);
+//        eleUtil.isElementEnabled(classNameHeader);
 //        eleUtil.waitforElementVisible(selectClassDD,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
 //        eleUtil.selectDropDownText(selectClassDD,clsName);
         eleUtil.waitforElementVisible(emailId,AppConstants.DEFAULT_SHORT_TIME_OUT);
@@ -79,8 +56,6 @@ public class AddStudentPage {
         eleUtil.selectDropDownText(genderSelect, gender);
         eleUtil.doSendKeys(alternateMobile,altMobile);
         eleUtil.doClick(submitBtn);
-
-        eleUtil.waitforElementpresence(mandatoryHeader,AppConstants.DEFAULT_LONG_TIME_OUT);
         String text=  eleUtil.waitforElementVisible(addStudentHeader,AppConstants.DEFAULT_LONG_TIME_OUT).getText();
         return text;
 

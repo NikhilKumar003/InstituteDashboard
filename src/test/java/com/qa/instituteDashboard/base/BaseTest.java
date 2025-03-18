@@ -17,9 +17,10 @@ public class BaseTest {
     protected StudentListPage studentListPage;
     protected LoanApplicationPage loansPage;
     protected AddStudentPage addStudentPage;
+    protected AddStudentUat addStudentUat;
     protected FeeStructurePage feeStructurePage;
     protected CoinsRequestPage coinsRequestPage;
-    protected BulkActionPage bulkActionPage;
+    public BulkActionPage bulkActionPage;
     protected Leo1CardPage leo1CardPage;
     protected FileManagerPage fileManagerPage;
     protected StudentFeeDetailsPage studentFeeDetailsPage;
