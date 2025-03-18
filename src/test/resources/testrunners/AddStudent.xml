@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Institute Dashboard Test Sanity Suite" verbose="3"
+<suite name="Institute Dashboard Test Regression Suite" verbose="3"
        thread-count="4" parallel="tests">
 
     <listeners>

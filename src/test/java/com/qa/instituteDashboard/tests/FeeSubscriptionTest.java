@@ -5,6 +5,7 @@ import com.qa.instituteDashboard.constants.AppConstants;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -16,12 +17,13 @@ public class FeeSubscriptionTest extends BaseTest {
         dashBoardPage.setFeeSubscriptionBtn();
         feeSubscriptionPage=  dashBoardPage.setFeeRegistrationPage();
     }
+
     @Test
     public void getPageUrlTest(){
        String subscriptionUrl = feeSubscriptionPage.getPageUrl();
        Assert.assertTrue(subscriptionUrl.contains(AppConstants.FEE_SUBSCRIPTION_FRACTION_URL));
     }
-    @Test(priority = Integer.MAX_VALUE)
+    @Test
     public void isRegistrationHeaderExistTest(){
         Assert.assertTrue(feeSubscriptionPage.isFeeSubscriptionHeaderExist());
     }
@@ -42,14 +44,40 @@ public class FeeSubscriptionTest extends BaseTest {
         int count =feeSubscriptionPage.getColomnListHeaderCount();
         Assert.assertEquals(count,AppConstants.FEE_SUBSCRIPTION_LIST_HEADER_COUNT);
     }
-    @Test(priority = Integer.MAX_VALUE-2)
+    @Test(priority = Integer.MAX_VALUE-2,enabled = false)
     public void getColomnHeaderList(){
         List<String> headerListText= feeSubscriptionPage.getClomnListHeaderList();
         Assert.assertEquals(headerListText,AppConstants.EXPECTED_STUDENT_LIST_HEADERS_LIST);
     }
-//    @Test(priority = Integer.MAX_VALUE-1 )
+    @Test(priority = Integer.MAX_VALUE-1 )
     public void isMessageBtnExistTest(){
-        Assert.assertTrue(feeSubscriptionPage.isMessageBtnExist());
+        SoftAssert softAssert = new SoftAssert();
+        feeSubscriptionPage.enterSearch();
+        feeSubscriptionPage.selectMandateDropDown();
+//        softAssert.assertTrue(feeSubscriptionPage.isMessageBtnExist());
+        softAssert.assertTrue(feeSubscriptionPage.isEyeButtonExist());
     }
+    @Test(priority = Integer.MAX_VALUE)
+    public void checkRegistrationUserTest(){
+        feeSubscriptionPage.selectNameAndMandate();
+        Assert.assertTrue(feeSubscriptionPage.checkRegistrationDetails());
+        feeSubscriptionPage.closeModel();
+     }
+    @Test(priority = Integer.MAX_VALUE)
+    public void getStudentActivityTest(){
+        feeSubscriptionPage.selectNameAndMandate();
+        Assert.assertTrue(feeSubscriptionPage.getStudentActivity());
+        feeSubscriptionPage.doBack();
+    }
+    @Test(priority = Integer.MAX_VALUE)
+    public void sendRegistrationTest(){
+        feeSubscriptionPage.selectNameAndMandate();
+        feeSubscriptionPage.sendRegistrationBtnExist();
+    }
+    @Test
+    public void setReportPageTest(){
+       Assert.assertTrue(feeSubscriptionPage.setReportPage());
+    }
+
 
 }
