@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 public class AddStudentUatTest extends BaseTest {
     @BeforeClass
     public void loginSetup(){
-        dashBoardPage= loginPage.doLogin("krishna.sahit@leo1.in", "School@1234");
+        dashBoardPage= loginPage.doLogin("nikhil.kumar@financepeer.co", "Test1@1234");
         addStudentPage= dashBoardPage.setAddStudentPage();
     }
     public String getMobileNumber(){
@@ -39,8 +39,8 @@ public class AddStudentUatTest extends BaseTest {
     }
     @Test()
     public void createStudentTest() {
-        String txt =  addStudentPage.createNewStudent("TRANCORP", "MUMBAI",
-                "Test Nikhil for Nach",getMobileNumber(),getStudentId(), "BTech CSE", "1st year",
+        String txt =  addStudentPage.createNewStudent("Engineering", "Kolhapur",
+                "Test Nikhil for Nach",getMobileNumber(),getStudentId(), "red", "1st",
                 "nikhil.kumar@leo1.in","Test Father",
                 "8909123245","12-09-2000","9054653278", prop.getProperty("gender"));
         Assert.assertEquals(txt, AppConstants.ADD_STUDENT_HEADER);

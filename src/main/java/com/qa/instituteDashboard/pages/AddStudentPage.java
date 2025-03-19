@@ -18,11 +18,11 @@ public class AddStudentPage {
     private By studentName = By.xpath("//input[@placeholder='Student Name']");
     private By stMobileNumber = By.xpath("//input[@placeholder='Student Mobile Number']");
     private By studentId = By.xpath("//input[@placeholder='Student Id']");
-    private By selectCourseDD = By.xpath("//div[contains(@class, ' css-yi2ntm-control')]");
+    private By selectCourseDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[3]");
 //    private By selectCourse = By.xpath("//div[text()='FEE SLAB JECRC']");
     private By classNameHeader = By.xpath("//div[text()='Class Name*:']");
 //    private By selectClassDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[2]");
-    private By selectClassDD = By.cssSelector("#react-select-3-placeholder");
+    private By selectClassDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[4]");
 //    private By selectClass = By.xpath("//h2[text()='Add Student']");
     private By emailId = By.cssSelector("input[placeholder='Email Id']");
     private By parentName = By.cssSelector("input[placeholder='Parent Name']");
@@ -35,7 +35,7 @@ public class AddStudentPage {
     private By resetBtn = By.cssSelector("button.PrimaryButton_button__tfJh7.pl-4.pr-4.d-flex.align-items-center");
     private By alternateMobile = By.xpath("//input[@placeholder='Alternate Mobile Number']");
     private By genderSelect = By.cssSelector("div.css-hlgwow div.css-1jqq78o-placeholder");
-
+    private By confirmPopup = By.xpath("//div[contains(text(),'successfully created')]");
 
     public AddStudentPage(WebDriver driver) {
         this.driver=driver;
@@ -79,6 +79,7 @@ public class AddStudentPage {
         eleUtil.selectDropDownText(genderSelect, gender);
         eleUtil.doSendKeys(alternateMobile,altMobile);
         eleUtil.doClick(submitBtn);
+        eleUtil.waitforElementpresence(confirmPopup,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
 
         eleUtil.waitforElementpresence(mandatoryHeader,AppConstants.DEFAULT_LONG_TIME_OUT);
         String text=  eleUtil.waitforElementVisible(addStudentHeader,AppConstants.DEFAULT_LONG_TIME_OUT).getText();
