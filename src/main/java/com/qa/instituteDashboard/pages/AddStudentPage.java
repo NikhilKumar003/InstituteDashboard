@@ -18,11 +18,11 @@ public class AddStudentPage {
     private By studentName = By.xpath("//input[@placeholder='Student Name']");
     private By stMobileNumber = By.xpath("//input[@placeholder='Student Mobile Number']");
     private By studentId = By.xpath("//input[@placeholder='Student Id']");
-    private By selectCourseDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[3]");
+    private By selectCourseDD = By.xpath("//div[text()='Select Course Name']");
 //    private By selectCourse = By.xpath("//div[text()='FEE SLAB JECRC']");
     private By classNameHeader = By.xpath("//div[text()='Class Name*:']");
 //    private By selectClassDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[2]");
-    private By selectClassDD = By.xpath("(//div[contains(@class, ' css-yi2ntm-control')])[4]");
+    private By selectClassDD = By.xpath("//div[text()='Select Class Name']");
 //    private By selectClass = By.xpath("//h2[text()='Add Student']");
     private By emailId = By.cssSelector("input[placeholder='Email Id']");
     private By parentName = By.cssSelector("input[placeholder='Parent Name']");
