@@ -11,13 +11,13 @@ import org.testng.asserts.SoftAssert;
 public class AddStudentUatTest extends BaseTest {
     @BeforeClass
     public void loginSetup(){
-        dashBoardPage= loginPage.doLogin("nikhil.kumar@financepeer.co", "Test1@1234");
+        dashBoardPage= loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
         addStudentPage= dashBoardPage.setAddStudentPage();
     }
     public String getMobileNumber(){
         long currentTime = System.currentTimeMillis();
         String timeInString= Long.toString(currentTime);
-        String mobile= "67"+timeInString.substring(timeInString.length()-8);
+        String mobile= "62"+timeInString.substring(timeInString.length()-8);
 
         return mobile;
     }
@@ -39,8 +39,8 @@ public class AddStudentUatTest extends BaseTest {
     }
     @Test()
     public void createStudentTest() {
-        String txt =  addStudentPage.createNewStudent("Engineering", "Kolhapur",
-                "Test Nikhil for Nach",getMobileNumber(),getStudentId(), "red", "1st",
+        String txt =  addStudentPage.createNewStudent(prop.getProperty("instituteName"), prop.getProperty("branchName"),
+                "Test Nikhil for Nach",getMobileNumber(),getStudentId(), prop.getProperty("courseName"), prop.getProperty("className"),
                 "nikhil.kumar@leo1.in","Test Father",
                 "8909123245","12-09-2000","9054653278", prop.getProperty("gender"));
         Assert.assertEquals(txt, AppConstants.ADD_STUDENT_HEADER);

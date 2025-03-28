@@ -19,7 +19,7 @@ public class FeeStructurePage  {
     private By downloadBtn = By.xpath("//span[text()='Download All']");
     private By addCourseHeader = By.xpath("//span[text()='Add New Course']");
     private By courseDropDown = By.cssSelector("div.col-md-7 div.css-yi2ntm-control");
-    private By classDropDown = By.cssSelector("#react-select-11-placeholder");
+    private By classDropDown = By.cssSelector("div.css-yi2ntm-control div[id^='react-select']");
     private By enterCourseText = By.xpath("//input[@placeholder='Enter Course Name']");
     private By enterAliasCourseText = By.xpath("//input[@placeholder='Enter Alias Course Name']");
     private By classNoText = By.xpath("//input[@type='number']");
@@ -30,6 +30,10 @@ public class FeeStructurePage  {
     private By closeBtn = By.xpath("//img[@alt='close']");
     private By branchDropDown = By.xpath("(//div[contains(@class, 'css-1dimb5e-singleValue')])[last()]");
     private By totalStudentText = By.xpath("(//div[contains(@class,'text-right')])");
+    private By courseText = By.xpath("//div[text()='No.of Classes/Years:']");
+    private By branchText = By.xpath("(//div[contains(text(),'Branch:')])");
+
+
 
 
 
@@ -71,10 +75,13 @@ public class FeeStructurePage  {
     public boolean addCourseBtn(){
         eleUtil.waitforElementpresence(courseBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
         eleUtil.waitforElementVisible(addCourseHeader,AppConstants.DEFAULT_SHORT_TIME_OUT);
+        eleUtil.waitforElementpresence(branchText,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
         eleUtil.selectDropDownText(classDropDown,"MUMBAI");
         eleUtil.waitforElementVisible(enterCourseText,AppConstants.DEFAULT_SHORT_TIME_OUT).sendKeys("test-1");
         eleUtil.waitforElementpresence(enterAliasCourseText,AppConstants.DEFAULT_SHORT_TIME_OUT).sendKeys("test");
         eleUtil.waitforElementpresence(classNoText,AppConstants.DEFAULT_SHORT_TIME_OUT).sendKeys("2");
+        eleUtil.waitforElementpresence(courseText,AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+
         eleUtil.waitforElementpresence(nextBtn,AppConstants.DEFAULT_LONG_TIME_OUT).click();
         eleUtil.waitforElementpresence(addCourseBtn,AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
        return  eleUtil.isElementDisplayed(addCourseBtn);
