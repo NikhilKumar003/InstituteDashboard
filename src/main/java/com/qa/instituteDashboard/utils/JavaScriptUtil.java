@@ -53,7 +53,7 @@ public class JavaScriptUtil {
     }
     public void flash(WebElement element) {
         String bgcolor = element.getCssValue("backgroundColor");// white
-        for(int i=0;i<4;i++) {
+        for(int i=0;i<8;i++) {
             changeColor("rgb(0,200.0,0)", element);	// green
             changeColor(bgcolor, element);
         }
