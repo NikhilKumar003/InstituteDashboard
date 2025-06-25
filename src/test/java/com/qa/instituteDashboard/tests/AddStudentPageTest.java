@@ -47,5 +47,9 @@ public class AddStudentPageTest extends BaseTest {
         Assert.assertEquals(txt, AppConstants.ADD_STUDENT_HEADER);
 //        studentListPage.setSearchBtn(getMobileNumber());
     }
+    @Test
+    public void sampleTest(){
+//        sample test
+    }
 
 }
