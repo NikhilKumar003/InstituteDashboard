@@ -67,7 +67,5 @@ public class JavaScriptUtil {
         }
 //		System.out.println("Current color: " + element.getCssValue("backgroundColor"));
     }
-//    public void sendKeysBtJs(){
-//        js.executeScript()
-//    }
+
 }
